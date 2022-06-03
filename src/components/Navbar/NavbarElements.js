@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const NavbarWrapper = styled.nav`
-  padding: 3rem 4rem;
+  padding: 2rem 4rem;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -79,8 +79,8 @@ export const NavSectionLink = styled(NavLink)`
   font-size: 1.6rem;
   transition: var(--transition);
   border: ${(props) => (props.$border ? "2px solid var(--color-gray)" : "")};
-  border-radius: ${(props) => (props.$border ? "2rem" : "")};
-  padding: ${(props) => (props.$border ? "1rem 2.5rem" : "")};
+  border-radius: ${(props) => (props.$border ? "1.5rem" : "")};
+  padding: ${(props) => (props.$border ? "1rem 2rem" : "")};
 
   &:hover {
     color: var(--color-dark);
