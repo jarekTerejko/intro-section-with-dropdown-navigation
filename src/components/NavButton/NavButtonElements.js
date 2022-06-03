@@ -19,6 +19,6 @@ export const NavButtonEl = styled.button`
 export const NavButtonText = styled.span`
   text-transform: capitalize;
   font-family: var(--font-family-sans);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-right: 1rem;
 `;
