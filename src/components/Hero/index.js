@@ -9,6 +9,7 @@ import {
   HeroContentColLeft,
   HeroContentColRight,
   HeroHeading,
+  HeroHeadingWord,
   HeroText,
   HeroWrapper,
 } from "./HeroElements";
@@ -28,7 +29,9 @@ const Hero = () => {
         <ContainerEl>
           <HeroContent>
             <HeroContentColLeft>
-              <HeroHeading>Make remote work</HeroHeading>
+              <HeroHeading>
+                <HeroHeadingWord>Make </HeroHeadingWord>remote work
+              </HeroHeading>
               <HeroText>
                 Get your team in sync, no matter your location. Streamline
                 processes, create team rituals, and watch productivity soar.
@@ -48,6 +51,7 @@ const Hero = () => {
             </HeroContentColLeft>
             <HeroContentColRight>
               <ImageEl src={HeroDesktopImage} className="deskto-img" />
+              <ImageEl src={HeroMobileImage} className="mobile-img" />
             </HeroContentColRight>
           </HeroContent>
         </ContainerEl>
