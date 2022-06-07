@@ -44,6 +44,13 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeNav = () => {
+    if (isOpen) {
+      handleMenu();
+    }
+    CloseNavSection();
+  };
+
   const handleNavSectionOne = () => {
     setIsOpenNavSectionOne(!isOpenNavSectionOne);
   };
@@ -61,11 +68,11 @@ const Navbar = () => {
   };
 
   return (
-    <NavbarWrapper>
-      <LinkR to="/" onClick={CloseNavSection}>
+    <NavbarWrapper isOpen={isOpen}>
+      <LinkR to="/" onClick={closeNav}>
         <ImageEl src={Logo} alt="Logo" />
       </LinkR>
-      <NavsWrapper>
+      <NavsWrapper isOpen={isOpen}>
         <Nav primary>
           <NavSectionWrapper>
             <NavButton
@@ -81,7 +88,7 @@ const Navbar = () => {
               {navSections.navSectionOne.map((item, i) => {
                 return (
                   <NavSectionItem key={i}>
-                    <NavSectionLink to={item.path} onClick={CloseNavSection}>
+                    <NavSectionLink to={item.path} onClick={closeNav}>
                       <ImageEl src={item.img} alt="" />
                       <NavSectionLinkText>{item.text}</NavSectionLinkText>
                     </NavSectionLink>
@@ -104,7 +111,7 @@ const Navbar = () => {
               {navSections.navSectionTwo.map((item, i) => {
                 return (
                   <NavSectionItem key={i}>
-                    <NavSectionLink to={item.path} onClick={CloseNavSection}>
+                    <NavSectionLink to={item.path} onClick={closeNav}>
                       <NavSectionLinkText style={{ marginLeft: 0 }}>
                         {item.text}
                       </NavSectionLinkText>
@@ -115,13 +122,13 @@ const Navbar = () => {
             </NavSectionList>
           </NavSectionWrapper>
           <li style={{ margin: "0 1.5rem" }}>
-            <NavSectionLink to="careers" onClick={CloseNavSection}>
+            <NavSectionLink to="careers" onClick={closeNav}>
               <NavSectionLinkText style={{ marginLeft: 0 }}>
                 Careers
               </NavSectionLinkText>
             </NavSectionLink>
           </li>
-          <li style={{ margin: "0 1.5rem" }} onClick={CloseNavSection}>
+          <li style={{ margin: "0 1.5rem" }} onClick={closeNav}>
             <NavSectionLink to="about">
               <NavSectionLinkText style={{ marginLeft: 0 }}>
                 About
@@ -129,16 +136,16 @@ const Navbar = () => {
             </NavSectionLink>
           </li>
         </Nav>
-        <Nav>
-          <li style={{ margin: "0 1.5rem" }} onClick={CloseNavSection}>
-            <NavSectionLink to="login">
+        <Nav secondary>
+          <li style={{ margin: "0 0 0.3rem 1.8rem" }} onClick={closeNav}>
+            <NavSectionLink to="login" $mobileBlock $borderTransparent>
               <NavSectionLinkText style={{ marginLeft: 0 }}>
                 Login
               </NavSectionLinkText>
             </NavSectionLink>
           </li>
-          <li style={{ margin: "0 0 0 1.5rem" }} onClick={CloseNavSection}>
-            <NavSectionLink to="register" $border>
+          <li style={{ margin: "0 0 0.3rem 1.8rem" }} onClick={closeNav}>
+            <NavSectionLink to="register" $border $mobileBlock>
               <NavSectionLinkText style={{ marginLeft: 0 }}>
                 Register
               </NavSectionLinkText>
