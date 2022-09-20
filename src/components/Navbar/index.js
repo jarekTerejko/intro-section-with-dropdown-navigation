@@ -19,7 +19,7 @@ import RemindersImg from "../../images/icon-reminders.svg";
 import PlanningImg from "../../images/icon-planning.svg";
 import X from "../../images/icon-close-menu.svg";
 import Bars from "../../images/icon-menu.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const navSections = {
@@ -64,6 +64,20 @@ const Navbar = () => {
     }
     if (isOpenNavSectionTwo) {
       handleNavSectionTwo();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", closeNavAfterResize);
+
+    return () => {
+      window.removeEventListener("resize", closeNavAfterResize);
+    };
+  }, [isOpen, isOpenNavSectionOne, isOpenNavSectionTwo]);
+
+  const closeNavAfterResize = () => {
+    if (window.innerWidth > 930) {
+      closeNav();
     }
   };
 
