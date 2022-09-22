@@ -73,6 +73,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("resize", closeNavAfterResize);
     };
+    // eslint-disable-next-line
   }, [isOpen, isOpenNavSectionOne, isOpenNavSectionTwo]);
 
   const closeNavAfterResize = () => {
@@ -80,6 +81,24 @@ const Navbar = () => {
       closeNav();
     }
   };
+
+  useEffect(() => {
+    const closeDropdown = (e) => {
+      if (
+        (isOpenNavSectionOne || isOpenNavSectionTwo) &&
+        e.path[1].tagName !== "BUTTON"
+      ) {
+        CloseNavSection();
+      }
+    };
+
+    document.body.addEventListener("click", closeDropdown);
+
+    return () => {
+      document.body.removeEventListener("click", closeDropdown);
+    };
+    // eslint-disable-next-line
+  }, [isOpenNavSectionOne, isOpenNavSectionTwo]);
 
   return (
     <NavbarWrapper isOpen={isOpen}>

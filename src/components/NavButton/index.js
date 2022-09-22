@@ -1,5 +1,5 @@
 import { ImageEl } from "../Image/ImageElement";
-import { NavButtonText, NavButtonEl } from "./NavButtonElements"
+import { NavButtonText, NavButtonEl } from "./NavButtonElements";
 import ArrowDown from "../../images/icon-arrow-down.svg";
 import ArrowUp from "../../images/icon-arrow-up.svg";
 
@@ -11,5 +11,5 @@ const NavButton = ({ text, handleNavClick, isOpenNavSection }) => {
     </NavButtonEl>
   );
 };
- 
+
 export default NavButton;
