@@ -46,3 +46,10 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.example-page {
+  min-height: calc(900px - 88px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
