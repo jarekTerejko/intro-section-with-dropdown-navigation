@@ -6,6 +6,7 @@ import Calendar from "./pages/Calendar";
 import Careers from "./pages/Careers";
 import History from "./pages/History";
 import Home from "./pages/Home";
+import LearnMore from "./pages/LearnMore";
 import Login from "./pages/Login";
 import OurTeam from "./pages/OurTeam";
 import Planning from "./pages/Planning";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/learn-more" element={<LearnMore />} />
       </Routes>
     </>
   );
