@@ -5,6 +5,10 @@ export const HeroWrapper = styled.header`
   padding-top: 4.2rem;
   padding-bottom: 11.75rem;
 
+  @media screen and (max-width: 930px) {
+    margin-top: 7rem;
+  }
+
   @media screen and (max-width: 375px) {
     padding-top: 0.5rem;
     padding-bottom: 9rem;

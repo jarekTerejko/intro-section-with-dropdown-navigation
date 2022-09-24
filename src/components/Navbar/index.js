@@ -11,6 +11,7 @@ import {
   NavSectionWrapper,
   NavsWrapper,
   NavMenuBtn,
+  NavbarOverlay,
 } from "./NavbarElements";
 import Logo from "../../images/logo.svg";
 import TodoImg from "../../images/icon-todo.svg";
@@ -20,6 +21,7 @@ import PlanningImg from "../../images/icon-planning.svg";
 import X from "../../images/icon-close-menu.svg";
 import Bars from "../../images/icon-menu.svg";
 import { useState, useEffect } from "react";
+import { useRef } from "react";
 
 const Navbar = () => {
   const navSections = {
@@ -100,8 +102,21 @@ const Navbar = () => {
     // eslint-disable-next-line
   }, [isOpenNavSectionOne, isOpenNavSectionTwo]);
 
+  const overlayRef = useRef();
+  const closeNavOverlayClick = (e) => {
+    if (overlayRef.current === e.target) {
+      closeNav();
+      CloseNavSection();
+    }
+  };
+
   return (
     <NavbarWrapper isOpen={isOpen}>
+      <NavbarOverlay
+        isOpen={isOpen}
+        ref={overlayRef}
+        onClick={closeNavOverlayClick}
+      />
       <LinkR to="/" onClick={closeNav}>
         <ImageEl src={Logo} alt="Logo" />
       </LinkR>

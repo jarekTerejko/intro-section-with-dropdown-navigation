@@ -12,21 +12,25 @@ export const NavbarWrapper = styled.nav`
   @media screen and (max-width: 930px) {
     padding: 2rem 1.5rem;
     justify-content: space-between;
-  }
-
-  &::before {
-    content: "";
-    position: ${(props) => (props.isOpen ? "absolute" : "")};
-    display: ${(props) => (props.isOpen ? "block" : "none")};
-    top: 0;
-    right: 0;
-    transition: opacity var(--transition);
-    height: 100vh;
+    position: fixed;
     width: 100%;
-    background: rgba(0, 0, 0, 0.68);
+    top: 0;
+    left: 0;
     z-index: 1;
-    opacity: ${(props) => (props.isOpen ? "1" : "0")};
+    background-color: var(--color-white);
   }
+`;
+
+export const NavbarOverlay = styled.div`
+  display: ${(props) => (props.isOpen ? "block" : "none")};
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: opacity var(--transition);
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.68);
+  z-index: 1;
 `;
 
 export const LinkR = styled(Link)`
